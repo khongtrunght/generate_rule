@@ -1,0 +1,26 @@
+{
+  "nodes": [
+    {
+      "name": "a",
+      "errorCode": "abc"
+    },
+    {
+      "name": "b",
+      "errorCode": "abcss"
+    },
+    {
+      "name": "c",
+      "errorCode": "ERROR C"
+    }
+  ],
+  "edges": [
+    {
+      "from": "a",
+      "to": "b"
+    },
+    {
+      "from": "a",
+      "to": "c"
+    }
+  ]
+}

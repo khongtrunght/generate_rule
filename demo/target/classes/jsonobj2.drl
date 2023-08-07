@@ -1,0 +1,28 @@
+package AlarmRules
+import com.neo.drools.entity.Alarm
+
+rule "test0"
+	when
+		$a : Alarm(errorCode == 'abc')
+		$b : Alarm(errorCode == 'abcss')
+		$c : Alarm(errorCode == 'ERROR C')
+	then
+		$c.setParent($a);
+		$a.setChildren($c);
+		$b.setParent($a);
+		$a.setChildren($b);
+end
+
+
+rule "test1"
+	when
+		$a : Alarm(errorCode == 'xyz')
+		$b : Alarm(errorCode == 'berror')
+		$c : Alarm(errorCode == 'ERROR C')
+	then
+		$a.setParent($c);
+		$c.setChildren($a);
+		$c.setParent($b);
+		$b.setChildren($c);
+end
+
